@@ -1,20 +1,20 @@
-const { Model, DataTypes } = require('sequelize');
+// import models
+const Product = require('./Product');
+const Category = require('./Category');
+const Tag = require('./Tag');
+const ProductTag = require('./ProductTag');
 
-const sequelize = require('../config/connection');
+// Products belongsTo Category
 
-class ProductTag extends Model {}
+// Categories have many Products
 
-ProductTag.init(
-  {
-    // define columns
-  },
-  {
-    sequelize,
-    timestamps: false,
-    freezeTableName: true,
-    underscored: true,
-    modelName: 'product_tag',
-  }
-);
+// Products belongToMany Tags (through ProductTag)
 
-module.exports = ProductTag;
+// Tags belongToMany Products (through ProductTag)
+
+module.exports = {
+  Product,
+  Category,
+  Tag,
+  ProductTag,
+};
