@@ -1,12 +1,7 @@
 
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// Products belongsTo Category
-  // Categories have many Products
 
-  // Products belongToMany Tags (through ProductTag)
-
-  // Tags belongToMany Products (through ProductTag)
 class Product extends Model { }
 Product.init(
   {
@@ -48,9 +43,4 @@ Product.init(
 );
 
 
-  module.exports = {
-    Product,
-    Category,
-    Tag,
-    ProductTag,
-  };
+  module.exports = Product;
